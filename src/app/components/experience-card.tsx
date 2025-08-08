@@ -1,12 +1,21 @@
 import React from "react";
 
+// Define the types for the props this component expects
+interface ExperienceCardProps {
+  title: string;
+  company: string;
+  location: string;
+  duration: string;
+  responsibilities: string[];
+}
+
 export default function ExperienceCard({
   title,
   company,
   location,
   duration,
   responsibilities,
-}) {
+}: ExperienceCardProps) {
   return (
     <div
       className="p-6 bg-white dark:bg-purple-950/40
