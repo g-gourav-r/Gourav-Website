@@ -34,6 +34,32 @@ export default function RootLayout({
         }}
       />
       <html lang="en" suppressHydrationWarning>
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  name: "Gourav R",
+                  url: "https://www.gouravr.com/",
+                },
+                {
+                  "@type": "Organization",
+                  name: "Gourav R",
+                  url: "https://www.gouravr.com/",
+                  logo: "https://www.gouravr.com/logo.png",
+                  sameAs: [
+                    "https://linkedin.com/in/gourav-r",
+                    "https://github.com/g-gourav-r",
+                  ],
+                },
+              ],
+            }),
+          }}
+        />
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased overflow-x-hidden",
