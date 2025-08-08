@@ -1,0 +1,6 @@
+# Allow all crawlers access to all pages
+User-agent: *
+Allow: /
+
+# Point to your sitemap file
+Sitemap: https://www.gouravr.com/sitemap.xml
