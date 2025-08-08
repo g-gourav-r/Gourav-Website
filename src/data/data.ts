@@ -1,6 +1,6 @@
 // src/data/data.ts
 
-import { Github, Home, FileText, Terminal, Mail, Award } from "lucide-react";
+// import { Github, Home, FileText, Terminal, Mail, Award } from "lucide-react";
 
 // --- Interfaces for type safety ---
 

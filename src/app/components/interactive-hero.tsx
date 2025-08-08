@@ -4,13 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AlertTriangle, Lightbulb } from "lucide-react";
 import { GlowingButton } from "./glowing-button";
 import Hero from "./Hero-section";
-import type { HeroProps } from "./Hero-section"; // Corrected import for the type
+import type { HeroProps } from "./Hero-section"; // Corrected to import the type
 
-// Define the props for the InteractiveHero component
-// It takes all the same props as the Hero component
-interface InteractiveHeroProps extends HeroProps {}
-
-const InteractiveHero = (props: InteractiveHeroProps) => {
+const InteractiveHero = (props: HeroProps) => {
   const [isLightOn, setIsLightOn] = useState<boolean>(true);
   const heroRef = useRef<HTMLDivElement>(null);
 

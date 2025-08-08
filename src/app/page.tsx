@@ -8,7 +8,7 @@ import ProjectCard from "./components/project-card";
 import TechStack from "./components/tech-stack";
 import ExperienceCard from "./components/experience-card";
 import CertificationCard from "./components/certification-card";
-import { FloatingDock } from "@/components/ui/floating-dock";
+// import { FloatingDock } from "@/components/ui/floating-dock";
 import InteractiveHero from "./components/interactive-hero";
 
 // Import data from the new file
@@ -79,7 +79,7 @@ export default function Page() {
           </h2>
           <div className="max-w-xl mx-auto text-center space-y-4">
             <p className="text-lg text-gray-500 dark:text-gray-400">
-              I'm currently open to new opportunities. Whether you have a
+              I&apos;m currently open to new opportunities. Whether you have a
               question or just want to say hi, my inbox is always open.
             </p>
             <Link href={`mailto:${heroData.email}`}>

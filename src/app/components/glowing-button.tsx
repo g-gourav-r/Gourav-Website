@@ -1,6 +1,6 @@
 "use client";
 import { motion, HTMLMotionProps } from "framer-motion";
-import React, { ButtonHTMLAttributes } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 
 // Define the props for GlowingButton

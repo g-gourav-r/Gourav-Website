@@ -9,7 +9,6 @@ import {
   PartyPopper,
   LucideIcon,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 // Define the type for an icon object in the icons array
 interface AnimatedIcon {

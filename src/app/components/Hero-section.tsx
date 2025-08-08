@@ -1,5 +1,5 @@
-import React, { forwardRef, RefObject } from "react";
-import { Linkedin, Mail } from "lucide-react";
+import React, { forwardRef } from "react";
+import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -71,7 +71,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
       >
         <div className="mx-auto max-w-3xl space-y-10 relative z-10">
           <small className="text-sm font-semibold text-gray-500 dark:text-gray-400">
-            Hey there, I'm
+            Hey there, I&apos;m
           </small>
           <motion.h1
             animate={controls}
