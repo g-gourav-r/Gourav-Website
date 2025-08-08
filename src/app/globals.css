@@ -131,3 +131,7 @@
 @theme {
   --font-brush: 'brush', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}

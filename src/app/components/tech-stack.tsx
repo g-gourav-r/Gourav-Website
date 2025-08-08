@@ -107,9 +107,11 @@ export default function TechStack() {
         <Button onClick={handleTouch} variant="outline" disabled={isFalling}>
           {isFalling ? "See? I told you!" : "Don't touch me!"}
         </Button>
-        <Button onClick={handleReset} disabled={!isFalling}>
-          Reset
-        </Button>
+        {isFalling && (
+          <Button onClick={handleReset} disabled={!isFalling}>
+            Reset
+          </Button>
+        )}
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {technologies.map((tech) => (

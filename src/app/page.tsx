@@ -9,7 +9,7 @@ import TechStack from "./components/tech-stack";
 import ExperienceCard from "./components/experience-card";
 import CertificationCard from "./components/certification-card";
 // import { FloatingDock } from "@/components/ui/floating-dock";
-import InteractiveHero from "./components/interactive-hero";
+import Hero from "./components/Hero-section";
 
 // Import data from the new file
 import { heroData, experiences, projects, certifications } from "@/data/data";
@@ -27,17 +27,23 @@ export default function Page() {
             </Link>
           </div>
           <div className="flex items-center space-x-2 ml-auto">
-            <Button variant="outline">Resume</Button>
+            <a
+              href="/Gourav_R_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline">Resume</Button>
+            </a>
           </div>
         </div>
       </header>
       <main className="container mx-auto px-4 md:px-6">
-        <InteractiveHero {...heroData} isLightOn={true} />
+        <Hero {...heroData} isLightOn={true} />
         <section id="experience" className="py-12 md:py-24 lg:py-32">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
             Professional Experience
           </h2>
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto grid gap-6">
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} {...exp} />
             ))}
@@ -54,7 +60,7 @@ export default function Page() {
           </div>
         </section>
         <section id="tech-stack" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
             Tech Stack
           </h2>
           <small className="block text-center text-gray-500 dark:text-gray-400 mb-12">
@@ -64,7 +70,7 @@ export default function Page() {
           <TechStack />
         </section>
         <section id="certifications" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
             Certifications
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
@@ -73,8 +79,8 @@ export default function Page() {
             ))}
           </div>
         </section>
-        <section id="contact" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
+        <section id="contact" className="py-12 md:py-24 lg:py-32 border-t">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
             Get In Touch
           </h2>
           <div className="max-w-xl mx-auto text-center space-y-4">

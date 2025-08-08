@@ -10,40 +10,27 @@ import {
   LucideIcon,
 } from "lucide-react";
 
-// Define the type for an icon object in the icons array
+// Define the type for each animation step
 interface AnimatedIcon {
   icon: LucideIcon;
   key: string;
+  label: string;
 }
 
+// Software lifecycle steps
 const icons: AnimatedIcon[] = [
-  { icon: FileCode, key: "code" },
-  { icon: Container, key: "container" },
-  { icon: Truck, key: "truck" },
-  { icon: Cloud, key: "cloud" },
-  { icon: Cloud, key: "cloud-2" },
-  { icon: PartyPopper, key: "party" },
+  { icon: FileCode, key: "code", label: "Write Code" },
+  { icon: Container, key: "container", label: "Pack" },
+  { icon: Truck, key: "truck", label: "Ship" },
+  { icon: Cloud, key: "cloud", label: "Deploy" },
+  { icon: PartyPopper, key: "party", label: "Ta-da!" },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0 },
-};
-
+// Animation variants
 const iconVariants = {
-  initial: { y: -20, opacity: 0, scale: 0.5 },
+  initial: { y: -20, opacity: 0, scale: 0.8 },
   animate: { y: 0, opacity: 1, scale: 1 },
-  exit: { y: 20, opacity: 0, scale: 0.5 },
+  exit: { y: 20, opacity: 0, scale: 0.8 },
 };
 
 export default function AnimatedTitle() {
@@ -52,52 +39,36 @@ export default function AnimatedTitle() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIconIndex((prevIndex) => (prevIndex + 1) % icons.length);
-    }, 1500);
+    }, 2000); // 2 seconds per step
 
     return () => clearInterval(timer);
   }, []);
 
   const currentIcon = icons[currentIconIndex];
+
+  // Prevent render error
+  if (!currentIcon) return null;
+
   const IconComponent = currentIcon.icon;
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="flex items-center justify-center space-x-2"
-    >
-      <motion.p
-        variants={textVariants}
-        className="text-xl font-medium text-gray-500 dark:text-gray-400"
-      >
-        From
-      </motion.p>
+    <div className="flex flex-col items-center justify-center h-[100px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIcon.key}
+          className="flex flex-col items-center text-purple-500"
           variants={iconVariants}
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ duration: 0.5 }}
-          className="text-purple-500"
+          transition={{ duration: 0.4 }}
         >
-          <IconComponent className="h-6 w-6" />
+          <IconComponent className="h-10 w-10 mb-1" />
+          <span className="text-sm text-purple-400 font-medium tracking-wide">
+            {currentIcon.label}
+          </span>
         </motion.div>
       </AnimatePresence>
-      <motion.p
-        variants={textVariants}
-        className="text-xl font-medium text-gray-500 dark:text-gray-400"
-      >
-        to
-      </motion.p>
-      <motion.p
-        variants={textVariants}
-        className="text-xl font-medium text-gray-500 dark:text-gray-400"
-      >
-        Cloud
-      </motion.p>
-    </motion.div>
+    </div>
   );
 }

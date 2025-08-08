@@ -1,12 +1,10 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  image?: string;
   link?: string;
   tags: string[];
 }
@@ -14,7 +12,6 @@ interface ProjectCardProps {
 export default function ProjectCard({
   title,
   description,
-  image,
   link,
   tags,
 }: ProjectCardProps) {
@@ -26,14 +23,6 @@ border border-gray-100 dark:border-purple-700/30
 transform transition-all duration-500 hover:-translate-y-3
 hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60 group"
     >
-      <div className="relative aspect-video">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
       <CardContent className="p-6">
         <h3 className="font-semibold text-xl mb-2 text-gray-900 dark:text-gray-100">
           {title}
@@ -54,8 +43,8 @@ ring-1 ring-inset ring-purple-600/20 dark:ring-purple-400/20"
           ))}
         </div>
       </CardContent>
-      <CardFooter className="p-6 pt-0">
-        {link && (
+      {link && (
+        <CardFooter className="p-6 pt-0">
           <Link
             href={link}
             target="_blank"
@@ -64,8 +53,8 @@ ring-1 ring-inset ring-purple-600/20 dark:ring-purple-400/20"
             <ArrowRight className="h-4 w-4" />
             Learn More
           </Link>
-        )}
-      </CardFooter>
+        </CardFooter>
+      )}
     </Card>
   );
 }

@@ -9,7 +9,6 @@ import { motion, useAnimation, useInView } from "framer-motion";
 export interface HeroProps {
   name: string;
   title: string;
-  bio: string;
   githubLink: string;
   linkedinLink: string;
   email: string;
@@ -17,7 +16,7 @@ export interface HeroProps {
 }
 
 const Hero = forwardRef<HTMLDivElement, HeroProps>(
-  ({ name, title, bio, githubLink, linkedinLink, email, isLightOn }, ref) => {
+  ({ name, title, githubLink, linkedinLink, email }, ref) => {
     const controls = useAnimation();
 
     const localRef = React.useRef<HTMLDivElement>(null);
@@ -37,7 +36,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
     }, [ref, localRef]);
 
     React.useEffect(() => {
-      if (isInView && isLightOn) {
+      if (isInView) {
         controls.start({
           color: [
             "#9CA3AF",
@@ -61,7 +60,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
           },
         });
       }
-    }, [controls, isInView, isLightOn]);
+    }, [controls, isInView]);
 
     return (
       <section
@@ -84,9 +83,6 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
           </div>
           <p className="text-xl font-medium text-gray-500 dark:text-gray-400 mb-6">
             {title}
-          </p>
-          <p className="mx-auto max-w-[700px] text-lg text-gray-500 dark:text-gray-400">
-            {bio}
           </p>
           <div className="flex justify-center space-x-4 py-2">
             {githubLink && (

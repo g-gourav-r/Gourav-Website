@@ -5,7 +5,6 @@ interface CertificationCardProps {
   title: string;
   issuer: string;
   date: string;
-  image?: string;
   link?: string;
 }
 
@@ -13,7 +12,6 @@ export default function CertificationCard({
   title,
   issuer,
   date,
-  image,
   link,
 }: CertificationCardProps) {
   return (
@@ -25,16 +23,6 @@ export default function CertificationCard({
                  hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60"
     >
       <div className="flex items-center space-x-4">
-        {image && (
-          <div className="relative w-16 h-16 shrink-0">
-            <Image
-              src={image}
-              alt={`${issuer} logo`}
-              fill
-              className="object-contain"
-            />
-          </div>
-        )}
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
             {title}
