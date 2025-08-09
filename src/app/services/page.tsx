@@ -37,13 +37,6 @@ export default function ServicesPage() {
           "@type": "Country",
           name: "India",
         },
-        serviceType: [
-          "Website Development",
-          "Custom Software Development",
-          "SEO Services",
-          "Google Business Setup",
-          "Digital Strategy & Consultation",
-        ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Website Development Packages",
