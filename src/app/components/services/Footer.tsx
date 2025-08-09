@@ -1,122 +1,45 @@
+"use client";
 import React from "react";
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
-const Footer = () => {
+export function Footer() {
   return (
-    <BackgroundBeamsWithCollision>
-      <footer className="bg-background py-10 text-foreground">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Company Info */}
-            <div className="col-span-1 md:col-span-2">
-              <h3 className="text-xl font-semibold mb-4">Your Company Name</h3>
-              <p>
-                Empowering businesses with top-notch website development and SEO
-                services.
-              </p>
-              <p className="mt-2">
-                © {new Date().getFullYear()} Your Company. All rights reserved.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:text-highlight transition-colors"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="hover:text-highlight transition-colors"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="hover:text-highlight transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-highlight transition-colors"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Email Subscription */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">
-                Subscribe to Our Newsletter
-              </h3>
-              <form className="flex flex-col space-y-4">
-                <input
-                  type="email"
-                  placeholder="Your Email Address"
-                  className="px-4 py-2 rounded-lg border border-muted focus:outline-none focus:border-highlight"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-highlight text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Social Media Icons */}
-          <div className="mt-8 flex justify-center space-x-4">
-            <Link
-              href="https://facebook.com"
-              target="_blank"
-              className="hover:text-highlight transition-colors"
+    <div className="h-[40rem] w-full rounded-md bg-background relative flex flex-col items-center justify-center antialiased">
+      <div className="max-w-2xl mx-auto p-4">
+        <motion.h1
+          className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent bg-gradient-to-b to-purple-200 from-neon-yellow text-center font-sans font-bold"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Ready to Build Something Great?
+        </motion.h1>
+        <motion.p
+          className="text-neutral-400 max-w-lg mx-auto my-2 text-sm md:text-lg text-center relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          I specialize in crafting innovative web solutions from start to
+          finish. Let&apos;s discuss your ideas and turn them into a reality.
+        </motion.p>
+        <div className="flex justify-center relative z-10 mt-8">
+          <Link href="/contact" passHref>
+            <Button
+              size="lg"
+              className="px-8 py-6 text-base bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-300"
             >
-              <Facebook className="w-5 h-5" />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              target="_blank"
-              className="hover:text-highlight transition-colors"
-            >
-              <Twitter className="w-5 h-5" />
-            </Link>
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              className="hover:text-highlight transition-colors"
-            >
-              <Instagram className="w-5 h-5" />
-            </Link>
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              className="hover:text-highlight transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-            </Link>
-          </div>
+              Get in Touch
+            </Button>
+          </Link>
         </div>
-      </footer>
-    </BackgroundBeamsWithCollision>
+      </div>
+      <BackgroundBeams />
+    </div>
   );
-};
-
-export default Footer;
+}

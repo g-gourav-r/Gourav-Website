@@ -4,7 +4,7 @@ import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 
 const faqs = [
   {
-    question: "I’m not technical. How can I manage my website?",
+    question: "I'm not technical. How can I manage my website?",
     answer:
       "A user manual will be provided to guide you through the process, making it easy to manage your website. Plus, full support will be available to help maintain and update your website for an entire year!",
   },
@@ -53,26 +53,26 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section className="w-full py-16 bg-white dark:bg-neutral-900 px-4">
+    <section className="w-full py-16 bg-background dark:bg-background px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-slate-800 dark:text-slate-100 mb-8">
+        <h2 className="text-4xl font-bold text-center text-white mb-8">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-neutral-300 dark:border-neutral-700"
+              className="border-b border-purple-500/20 dark:border-neon-yellow"
             >
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full text-left py-4 flex justify-between items-center text-slate-800 dark:text-slate-100"
+                className="w-full text-left py-4 flex justify-between items-center text-white"
               >
                 <span className="text-lg font-semibold">{faq.question}</span>
                 {activeIndex === index ? (
-                  <IconChevronUp className="h-6 w-6 text-blue-500" />
+                  <IconChevronUp className="h-6 w-6 text-neon-yellow" />
                 ) : (
-                  <IconChevronDown className="h-6 w-6 text-blue-500" />
+                  <IconChevronDown className="h-6 w-6 text-neon-yellow" />
                 )}
               </button>
               <div
@@ -80,9 +80,7 @@ const FAQAccordion = () => {
                   activeIndex === index ? "max-h-screen" : "max-h-0"
                 }`}
               >
-                <p className="text-neutral-600 dark:text-neutral-400 pb-4">
-                  {faq.answer}
-                </p>
+                <p className="text-gray-400 pb-4">{faq.answer}</p>
               </div>
             </div>
           ))}

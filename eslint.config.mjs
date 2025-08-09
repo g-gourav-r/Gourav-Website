@@ -10,6 +10,11 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // This object tells ESLint to ignore the specified directory.
+  {
+    ignores: ["src/components/ui"],
+  },
+  // This spreads your existing Next.js configurations.
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
