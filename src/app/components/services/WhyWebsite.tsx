@@ -1,5 +1,7 @@
 import React from "react";
 import { Globe, Search, BarChart } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
+import FormModal from "./FormModal";
 
 const WhyWebsite = () => {
   const points = [
@@ -24,7 +26,7 @@ const WhyWebsite = () => {
   ];
 
   return (
-    <section className="w-full py-16 bg-background px-4">
+    <section className="w-full py-16 px-4">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">
           Why Your Business Needs{" "}
@@ -37,26 +39,22 @@ const WhyWebsite = () => {
         </p>
         <div className="grid gap-8 md:grid-cols-3">
           {points.map((point, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-lg bg-white dark:bg-neutral-800 shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="mb-4 flex justify-center text-center">
+            <CardSpotlight key={index} className="relative p-6">
+              <div className="absolute inset-0 bg-black opacity-10 rounded-2xl pointer-events-none"></div>
+              <div className="relative flex justify-center items-center mb-4">
                 {point.icon}
               </div>
-              <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-2">
+              <h2 className="relative text-2xl font-semibold text-center mb-2">
                 {point.title}
-              </h3>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+              </h2>
+              <p className="relative text-muted-foreground text-center">
                 {point.description}
               </p>
-            </div>
+            </CardSpotlight>
           ))}
         </div>
         <div className="mt-12">
-          <button className="mt-8 inline-flex h-12 items-center justify-center rounded-md border border-transparent bg-neon-yellow px-6 font-medium text-slate-100 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neon-yellow focus:ring-offset-2 focus:ring-offset-background">
-            Get Started
-          </button>
+          <FormModal />
         </div>
       </div>
     </section>

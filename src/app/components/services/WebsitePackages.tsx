@@ -1,7 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import FormModal from "./FormModal";
 
 // A single package's data
 interface Package {
@@ -72,7 +72,7 @@ const packages: Package[] = [
 
 const WebsitePackages = () => {
   return (
-    <section className="w-full py-16 bg-background px-4">
+    <section className="w-full py-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-white mb-4">
           Development <span className="text-neon-yellow">Packages</span>
@@ -87,7 +87,7 @@ const WebsitePackages = () => {
           {packages.map((pkg, index) => (
             <Card
               key={index}
-              className="flex flex-col h-full justify-between bg-white dark:bg-neutral-800 p-8 shadow-xl"
+              className="flex flex-col h-full justify-between bg-black p-8 shadow-xl"
             >
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2">
@@ -98,13 +98,16 @@ const WebsitePackages = () => {
                 <ul className="text-left space-y-3 mb-8">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-center text-gray-300">
-                      <Check className="h-4 w-4 mr-2 text-green-500" />
+                      <Check className="h-4 w-4 mr-2 text-neon-yellow" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <Button className="w-full">Get a Free Consultation</Button>
+              <FormModal
+                buttonClassName="w-full bg-white text-black hover:bg-neon-yellow transition-colors"
+                buttonText="Get a Free Consultation"
+              />
             </Card>
           ))}
         </div>

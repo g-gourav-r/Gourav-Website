@@ -23,7 +23,7 @@ export default function BackgroundPattern({
         backgroundImage: 'url("/logo.png")',
         filter: "blur(3px)",
         backgroundSize: "100px",
-        zIndex: 0,
+        zIndex: -1,
       }}
     />
   );

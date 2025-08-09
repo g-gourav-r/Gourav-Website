@@ -21,12 +21,15 @@ export default function Page() {
         <div className="container mx-auto flex h-14 items-center px-4 md:px-6">
           <div className="mr-4">
             <Link className="mr-6 flex items-center space-x-2" href="/">
-              <span className="font-bold font-brush text-purple-500 sm:inline-block">
+              <span className="font-bold font-brush text-neon-yellow sm:inline-block">
                 {heroData.name}
               </span>
             </Link>
           </div>
           <div className="flex items-center space-x-2 ml-auto">
+            <a href="/services" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline">Services</Button>
+            </a>
             <a
               href="/Gourav_R_Resume.pdf"
               target="_blank"

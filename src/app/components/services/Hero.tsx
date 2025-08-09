@@ -1,10 +1,11 @@
 import React from "react";
 import { Cover } from "@/components/ui/cover";
 import { Spotlight } from "@/components/ui/Spotlight";
+import FormModal from "./FormModal";
 
 const Hero = () => {
   return (
-    <section className="relative w-screen h-screen bg-background text-foreground flex flex-col justify-center items-center overflow-hidden">
+    <section className="relative w-screen h-screen text-foreground flex flex-col justify-center items-center overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
@@ -23,9 +24,8 @@ const Hero = () => {
           <span className="text-neon-yellow">rapid growth</span>. Let us help
           you succeed in the digital world.
         </p>
-        <button className="mt-8 inline-flex h-12 items-center justify-center rounded-md border border-transparent bg-neon-yellow px-6 font-medium text-slate-100 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neon-yellow focus:ring-offset-2 focus:ring-offset-background">
-          Get Started
-        </button>
+
+        <FormModal />
       </div>
     </section>
   );

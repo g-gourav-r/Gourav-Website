@@ -56,7 +56,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-20 px-8 bg-background text-foreground overflow-x-hidden">
+    <section className="py-20 px-8 text-foreground overflow-x-hidden">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">
           Our Expert <span className="text-neon-yellow">Services</span>
@@ -70,7 +70,7 @@ const Services = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {services.map((service, index) => (
           <CardSpotlight key={index} className="relative p-6">
-            <div className="absolute inset-0 bg-black opacity-10 rounded-2xl pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-2xl pointer-events-none"></div>
             <div className="relative flex justify-center items-center mb-4">
               {service.icon}
             </div>

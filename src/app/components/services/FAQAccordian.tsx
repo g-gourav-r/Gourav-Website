@@ -53,7 +53,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <section className="w-full py-16 bg-background dark:bg-background px-4">
+    <section className="w-full py-16 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-white mb-8">
           Frequently Asked Questions

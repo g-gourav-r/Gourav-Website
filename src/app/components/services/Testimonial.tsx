@@ -38,16 +38,16 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <div className="py-12 bg-background text-foreground">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <div className="py-12 text-foreground">
+      <h2 className="text-5xl font-bold text-center mb-8">
         What Our <span className="text-neon-yellow">Clients</span> Say
       </h2>
 
-      <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className=" rounded-md flex flex-col antialiased bg-background dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
           items={testimonials}
-          direction="right"
-          speed="slow"
+          direction="left"
+          speed="fast"
         />
       </div>
     </div>

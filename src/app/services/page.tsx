@@ -10,7 +10,7 @@ import BackgroundPattern from "../components/services/BackgroundPattern";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative z-10">
       <BackgroundPattern />
       {/* 1. Hero Section - The main introduction to your brand */}
       <Hero />

@@ -14,38 +14,38 @@ export function Portfolio() {
   const slideData: SlideData[] = [
     {
       title: "Agino Tech",
-      button: "Explore Component",
+      button: "View",
       src: "/portfolio/Agino Tech.png",
-      href: "/projects/agino-tech",
+      href: "https://www.agino.tech",
     },
     {
       title: "National Video and Photo Studio",
-      button: "Explore Component",
+      button: "View",
       src: "/portfolio/National Video and Photo Studio.png",
-      href: "/projects/national-video-photo-studio",
+      href: "https://www.nationalvideo.in/",
     },
     {
       title: "OptiExtract",
-      button: "Explore Component",
+      button: "View",
       src: "/portfolio/OptiExtract.png",
-      href: "/projects/optiextract",
+      href: "https://www.optiextract.com",
     },
     {
       title: "Sindhu Eye Hospitals",
-      button: "Explore Component",
+      button: "View",
       src: "/portfolio/Sindhu Eye Hospitals.png",
-      href: "/projects/sindhu-eye-hospitals",
+      href: "https://www.sindhueyehospital.com",
     },
     {
       title: "TwinTring",
-      button: "Explore Component",
+      button: "View",
       src: "/portfolio/TwinTring.png",
-      href: "/projects/twintring",
+      href: "https://www.twintring.in",
     },
   ];
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-background text-foreground overflow-x-hidden">
+    <section className="py-20 px-4 md:px-8 text-foreground overflow-x-hidden">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <motion.h1
           className="text-4xl font-bold mb-4"
