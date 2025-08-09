@@ -6,10 +6,12 @@ import WhyWebsite from "../components/services/WhyWebsite";
 import FAQAccordion from "../components/services/FAQAccordian";
 import WebsitePackages from "../components/services/WebsitePackages";
 import { Footer } from "../components/services/Footer";
+import BackgroundPattern from "../components/services/BackgroundPattern";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative">
+      <BackgroundPattern />
       {/* 1. Hero Section - The main introduction to your brand */}
       <Hero />
 
@@ -33,6 +35,6 @@ export default function Home() {
 
       {/* 8. Contact CTA/Footer - The final call-to-action */}
       <Footer />
-    </>
+    </div>
   );
 }
