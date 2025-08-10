@@ -56,7 +56,7 @@ export default function AnimatedTitle() {
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIcon.key}
-          className="flex flex-col items-center text-purple-500"
+          className="flex flex-col items-center text-neon-yellow"
           variants={iconVariants}
           initial="initial"
           animate="animate"
@@ -64,7 +64,7 @@ export default function AnimatedTitle() {
           transition={{ duration: 0.4 }}
         >
           <IconComponent className="h-10 w-10 mb-1" />
-          <span className="text-sm text-purple-400 font-medium tracking-wide">
+          <span className="text-sm text-neon-yellow font-medium tracking-wide">
             {currentIcon.label}
           </span>
         </motion.div>

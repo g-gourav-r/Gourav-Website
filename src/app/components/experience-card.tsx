@@ -1,6 +1,7 @@
 import React from "react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
-// Define the types for the props this component expects
 interface ExperienceCardProps {
   title: string;
   company: string;
@@ -9,21 +10,25 @@ interface ExperienceCardProps {
   responsibilities: string[];
 }
 
-export default function ExperienceCard({
+const ExperienceCard = ({
   title,
   company,
   location,
   duration,
   responsibilities,
-}: ExperienceCardProps) {
+}: ExperienceCardProps) => {
   return (
-    <div
-      className="p-6 bg-white dark:bg-purple-950/40
-                  shadow-xl dark:shadow-purple-900/40
-                  border border-gray-100 dark:border-purple-700/30
-                  transform transition-all duration-500 hover:-translate-y-3
-                  hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60"
-    >
+    <Card className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 grid:3">
+      {" "}
+      <GlowingEffect
+        blur={0}
+        borderWidth={3}
+        spread={80}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+      />
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
           {title}
@@ -40,6 +45,7 @@ export default function ExperienceCard({
           <li key={index}>{responsibility}</li>
         ))}
       </ul>
-    </div>
+    </Card>
   );
-}
+};
+export default ExperienceCard;

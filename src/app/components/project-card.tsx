@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 interface ProjectCardProps {
   title: string;
@@ -16,13 +17,16 @@ export default function ProjectCard({
   tags,
 }: ProjectCardProps) {
   return (
-    <Card
-      className="overflow-hidden bg-white dark:bg-purple-950/40
-shadow-xl dark:shadow-purple-900/40
-border border-gray-100 dark:border-purple-700/30
-transform transition-all duration-500 hover:-translate-y-3
-hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60 group"
-    >
+    <Card className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 grid:3 flex justify-between">
+      <GlowingEffect
+        blur={0}
+        borderWidth={3}
+        spread={80}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+      />
       <CardContent className="p-6">
         <h3 className="font-semibold text-xl mb-2 text-gray-900 dark:text-gray-100">
           {title}
@@ -34,9 +38,9 @@ hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60 group"
           {tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center rounded-md bg-purple-200/50 dark:bg-purple-800/40
-px-2 py-1 text-xs font-medium text-purple-800 dark:text-purple-200
-ring-1 ring-inset ring-purple-600/20 dark:ring-purple-400/20"
+              className="inline-flex items-center rounded-md bg-neon-yellow/40
+px-2 py-1 text-xs font-medium text-neon-yellow
+ring-1 ring-inset ring-neon-yellow/20"
             >
               {tag}
             </span>
@@ -48,7 +52,7 @@ ring-1 ring-inset ring-purple-600/20 dark:ring-purple-400/20"
           <Link
             href={link}
             target="_blank"
-            className="inline-flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-neon-yellow transition-colors"
           >
             <ArrowRight className="h-4 w-4" />
             Learn More

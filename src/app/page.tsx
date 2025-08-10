@@ -2,7 +2,6 @@
 
 "use client";
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
 import Link from "next/link";
 import ProjectCard from "./components/project-card";
 import TechStack from "./components/tech-stack";
@@ -10,14 +9,16 @@ import ExperienceCard from "./components/experience-card";
 import CertificationCard from "./components/certification-card";
 // import { FloatingDock } from "@/components/ui/floating-dock";
 import Hero from "./components/Hero-section";
+import BackgroundPattern from "./components/services/BackgroundPattern";
 
 // Import data from the new file
 import { heroData, experiences, projects, certifications } from "@/data/data";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gray-900">
-      <header className="sticky top-0 z-50 w-full border-b bg-gray-900">
+    <div className="min-h-screen bg-background relative z-10">
+      <BackgroundPattern />
+      <header className="sticky top-0 z-50 w-full border-b backdrop-blur-lg">
         <div className="container mx-auto flex h-14 items-center px-4 md:px-6">
           <div className="mr-4">
             <Link className="mr-6 flex items-center space-x-2" href="/">
@@ -27,33 +28,40 @@ export default function Page() {
             </Link>
           </div>
           <div className="flex items-center space-x-2 ml-auto">
-            <a href="/services" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline">Services</Button>
-            </a>
-            <a
-              href="/Gourav_R_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline">Resume</Button>
-            </a>
+            {/* <Link href="/services">
+              <Button
+                type="button"
+                className="px-6 font-medium transition-transform hover:scale-105  mx-auto sm:text-sm  h-8 border bg-neon-yellow/50 text-white hover:bg-neon-yellow  border-neon-yellow hover:text-black text-xs flex justify-center items-center rounded-2xl hover:shadow-lg duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+              >
+                Services
+              </Button>
+            </Link> */}
+
+            <Link href="/Gourav_R_Resume.pdf">
+              <Button
+                type="button"
+                className=" px-6 font-medium transition-transform hover:scale-105  mx-auto sm:text-sm  h-8 border bg-neon-yellow/50 text-white hover:bg-neon-yellow  border-neon-yellow hover:text-black text-xs flex justify-center items-center rounded-2xl hover:shadow-lg duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+              >
+                Download Resume
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
       <main className="container mx-auto px-4 md:px-6">
         <Hero {...heroData} isLightOn={true} />
         <section id="experience" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
             Professional Experience
           </h2>
-          <div className="max-w-4xl mx-auto grid gap-6">
+          <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} {...exp} />
             ))}
           </div>
         </section>
         <section id="projects" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter leading-relaxed sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
             Projects
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -63,7 +71,7 @@ export default function Page() {
           </div>
         </section>
         <section id="tech-stack" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter leading-relaxed sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
             Tech Stack
           </h2>
           <small className="block text-center text-gray-500 dark:text-gray-400 mb-12">
@@ -73,7 +81,7 @@ export default function Page() {
           <TechStack />
         </section>
         <section id="certifications" className="py-12 md:py-24 lg:py-32">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter leading-relaxed sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
             Certifications
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
@@ -83,7 +91,7 @@ export default function Page() {
           </div>
         </section>
         <section id="contact" className="py-12 md:py-24 lg:py-32 border-t">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter leading-relaxed sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
             Get In Touch
           </h2>
           <div className="max-w-xl mx-auto text-center space-y-4">
@@ -92,33 +100,21 @@ export default function Page() {
               question or just want to say hi, my inbox is always open.
             </p>
             <Link href={`mailto:${heroData.email}`}>
-              <Button size="lg" className="px-8 py-6 text-base">
-                <Mail className="mr-2 h-5 w-5" />
-                Say Hello
+              <Button
+                type="button"
+                className=" px-6 font-medium transition-transform hover:scale-105  mx-auto sm:text-sm  h-8 border bg-neon-yellow/50 text-white hover:bg-neon-yellow  border-neon-yellow hover:text-black text-xs flex justify-center items-center rounded-2xl hover:shadow-lg duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+              >
+                Let&apos;s Connect
               </Button>
             </Link>
           </div>
         </section>
       </main>
       <footer className="border-t">
-        <div className="container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
+        <div className="container mx-auto flex flex-col justify-center gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
           <p className="text-xs text-gray-500 dark:text-gray-400">
             © 2024 {heroData.name}. All rights reserved.
           </p>
-          <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-            <Link
-              className="text-xs hover:underline underline-offset-4"
-              href="#"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              className="text-xs hover:underline underline-offset-4"
-              href="#"
-            >
-              Privacy
-            </Link>
-          </nav>
         </div>
       </footer>
       <div className="flex fixed items-center justify-center w-full">

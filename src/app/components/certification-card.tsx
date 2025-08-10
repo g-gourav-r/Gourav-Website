@@ -1,4 +1,7 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardFooter } from "@/components/ui/card";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 interface CertificationCardProps {
   title: string;
   issuer: string;
@@ -13,13 +16,16 @@ export default function CertificationCard({
   link,
 }: CertificationCardProps) {
   return (
-    <Card
-      className="p-6 bg-white dark:bg-purple-950/40
-                 shadow-xl dark:shadow-purple-900/40
-                 border border-gray-100 dark:border-purple-700/30
-                 transform transition-all duration-500 hover:-translate-y-3
-                 hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60"
-    >
+    <Card className="relative h-full rounded-2xl border p-5 md:rounded-3xl md:p-3 grid:3 flex justify-between">
+      <GlowingEffect
+        blur={0}
+        borderWidth={3}
+        spread={80}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+      />
       <div className="flex items-center space-x-4">
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
@@ -32,14 +38,16 @@ export default function CertificationCard({
         </div>
       </div>
       {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-block text-sm text-purple-600 dark:text-purple-400 hover:underline"
-        >
-          View Credential
-        </a>
+        <CardFooter className="p-0">
+          <Link
+            href={link}
+            target="_blank"
+            className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-neon-yellow transition-colors"
+          >
+            <ArrowRight className="h-4 w-4" />
+            Learn More
+          </Link>
+        </CardFooter>
       )}
     </Card>
   );

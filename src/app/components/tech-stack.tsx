@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // Interface for a single technology category
 interface Technology {
@@ -113,12 +114,21 @@ export default function TechStack() {
           </Button>
         )}
       </div>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {technologies.map((tech) => (
           <Card
             key={tech.category}
-            className="p-6 bg-white dark:bg-purple-950/40 shadow-xl dark:shadow-purple-900/40 border border-gray-100 dark:border-purple-700/30 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-purple-400/30 dark:hover:shadow-purple-700/60"
+            className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 grid:3"
           >
+            <GlowingEffect
+              blur={0}
+              borderWidth={3}
+              spread={80}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+            />
             <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
               {tech.category}
             </h3>
@@ -130,7 +140,9 @@ export default function TechStack() {
                     variants={itemVariants}
                     animate={isFalling ? "falling" : "reset"}
                     initial="hidden"
-                    className="inline-flex items-center rounded-md bg-purple-200/50 dark:bg-purple-800/40 px-2 py-1 text-md font-medium text-purple-800 dark:text-purple-200 ring-1 ring-inset ring-purple-600/20 dark:ring-purple-400/20"
+                    className="inline-flex items-center rounded-md bg-neon-yellow/40
+px-2 py-1 text-xs font-medium text-neon-yellow
+ring-1 ring-inset ring-neon-yellow/20"
                   >
                     {skill}
                   </motion.span>

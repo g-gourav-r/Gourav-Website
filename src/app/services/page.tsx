@@ -10,6 +10,9 @@ import WebsitePackages from "../components/services/WebsitePackages";
 import { Footer } from "../components/services/Footer";
 import BackgroundPattern from "../components/services/BackgroundPattern";
 import Script from "next/script";
+import Link from "next/link";
+import FormModal from "../components/services/FormModal";
+import { heroData } from "@/data/data";
 
 // Define the SEO metadata for this specific page
 export const metadata = {
@@ -135,6 +138,20 @@ export default function ServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <header className="sticky top-0 z-50 w-full border-b backdrop-blur-lg">
+        <div className="container mx-auto flex h-14 items-center px-4 md:px-6">
+          <div className="mr-4">
+            <Link className="mr-6 flex items-center space-x-2" href="/">
+              <span className="font-bold font-brush text-neon-yellow sm:inline-block">
+                {heroData.name}
+              </span>
+            </Link>
+          </div>
+          <div className="flex items-center space-x-2 ml-auto">
+            <FormModal buttonClassName="px-6 font-medium transition-transform hover:scale-105  mx-auto sm:text-sm  h-8 border bg-neon-yellow/50 text-white hover:bg-neon-yellow  border-neon-yellow hover:text-black text-xs flex justify-center items-center rounded-2xl hover:shadow-lg duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]" />
+          </div>
+        </div>
+      </header>
       <BackgroundPattern />
       {/* 1. Hero Section - The main introduction to your brand */}
       <Hero />

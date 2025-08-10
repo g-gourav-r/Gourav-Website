@@ -4,6 +4,7 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AnimatedTitle from "./animated-title";
+import { Spotlight } from "@/components/ui/spotlight-new";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 export interface HeroProps {
@@ -40,19 +41,19 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
         controls.start({
           color: [
             "#9CA3AF",
-            "#A855F7",
+            "#a5e12d",
             "#9CA3AF",
-            "#A855F7",
+            "#a5e12d",
             "#9CA3AF",
-            "#A855F7",
+            "#a5e12d",
           ],
           textShadow: [
-            "0 0 0px #A855F7",
-            "0 0 0px #A855F7",
-            "0 0 0px #A855F7",
-            "0 0 0px #A855F7",
-            "0 0 0px #A855F7",
-            "0 0 120px #A855F7",
+            "0 0 0px #a5e12d",
+            "0 0 0px #a5e12d",
+            "0 0 0px #a5e12d",
+            "0 0 0px #a5e12d",
+            "0 0 0px #a5e12d",
+            "0 0 120px #a5e12d",
           ],
           transition: {
             color: { times: [0, 0.1, 0.2, 0.3, 0.4, 1], duration: 1.5 },
@@ -68,6 +69,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
         id="hero"
         className="py-12 md:py-24 lg:py-32 flex items-center justify-center min-h-screen text-center"
       >
+        <Spotlight />
         <div className="mx-auto max-w-3xl space-y-10 relative z-10">
           <small className="text-sm font-semibold text-gray-500 dark:text-gray-400">
             Hey there, I&apos;m

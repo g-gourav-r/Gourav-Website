@@ -53,7 +53,7 @@ export function Portfolio() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          My <span className="text-neon-yellow">Works</span>
+          <span className="text-neon-yellow">Works</span>
         </motion.h1>
         <motion.p
           className="text-lg text-muted-foreground"
