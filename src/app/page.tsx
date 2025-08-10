@@ -91,11 +91,11 @@ export default function Page() {
           </div>
         </section>
         <section id="contact" className="py-12 md:py-24 lg:py-32 border-t">
-          <h2 className="text-3xl font-bold tracking-tighter leading-relaxed sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold tracking-tighter leading-relaxed sm:text-4xl md:text-5xl md:mb-12 text-center bg-gradient-to-b from-neon-yellow via-lime-300 to-neon-yellow text-transparent bg-clip-text">
             Get In Touch
           </h2>
           <div className="max-w-xl mx-auto text-center space-y-4">
-            <p className="text-lg text-gray-500 dark:text-gray-400">
+            <p className=" md:text-lg text-gray-500 dark:text-gray-400">
               I&apos;m currently open to new opportunities. Whether you have a
               question or just want to say hi, my inbox is always open.
             </p>

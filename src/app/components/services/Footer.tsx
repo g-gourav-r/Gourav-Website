@@ -9,7 +9,7 @@ export function Footer() {
     <div className="h-[40rem] w-full rounded-md relative flex flex-col items-center justify-center antialiased">
       <div className="max-w-2xl mx-auto p-4">
         <motion.h1
-          className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 text-center font-sans font-bold"
+          className="relative z-10 text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 text-center font-sans font-bold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -19,7 +19,7 @@ export function Footer() {
           Online?
         </motion.h1>
         <motion.p
-          className="text-gray-400 max-w-lg mx-auto my-2 text-sm md:text-lg text-center relative z-10"
+          className="text-gray-400 max-w-lg mx-auto my-2 text-lg text-center relative z-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
