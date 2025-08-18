@@ -12,9 +12,9 @@ import { heroData } from "@/data/data";
 
 // Define the SEO metadata for this specific page
 export const metadata = {
-  title: "186-Point SEO Checklist for 2025 - Your Guide to Better SEO",
+  title: "Advanced SEO Checklist",
   description:
-    "A comprehensive SEO checklist with 186 actionable tips for 2025. Boost your website's traffic and visibility with this guide covering content, technical, and on-page SEO.",
+    "A comprehensive SEO checklist]. Boost your website's traffic and visibility with this checklist covering content, technical, and on-page SEO.",
 };
 
 // Data for the checklist items.
