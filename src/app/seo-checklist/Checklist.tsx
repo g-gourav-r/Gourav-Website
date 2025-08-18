@@ -37,12 +37,11 @@ export default function Checklist({ data }: ChecklistProps) {
                   {item.label}
                 </h3>
                 {/* Checklist Items */}
-                <ul className="list-none space-y-2 text-gray-700 dark:text-gray-300">
+                <ul className="list-none space-y-3 text-gray-700 dark:text-gray-300">
                   {item.subItems.map((subItem, subIndex) => (
-                    <li key={subIndex} className="flex items-start">
-                      {/* Checkmark icon for visual appeal */}
-                      <CircleSmall className="text-neon-yellow me-2" />
-                      {subItem}
+                    <li key={subIndex} className="flex">
+                      <CircleSmall className="text-neon-yellow flex-shrink-0 mt-1 w-5 h-5" />
+                      <span className="ml-2 leading-relaxed">{subItem}</span>
                     </li>
                   ))}
                 </ul>
